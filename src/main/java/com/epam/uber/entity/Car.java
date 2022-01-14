@@ -1,28 +1,57 @@
 package com.epam.uber.entity;
 
-import com.epam.uber.util.IdGenerator;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.util.concurrent.Semaphore;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Car {
-    private static final Logger LOGGER = LogManager.getLogger(Car.class);
-    private static final int NUMBER_OF_CARS = 5;
-
-    private final long id;
-    private int passengersExpect;
-    private final Semaphore carSemaphore = new Semaphore(NUMBER_OF_CARS, true);
-    private final Lock carLock = new ReentrantLock();
-//    private Location locationOfCarTaxi;
-
-    public Car(){
-        id = IdGenerator.generatorId();
+    public double getxCoordinateOfCar() {
+        return xCoordinateOfCar;
     }
 
-//    public void
+    public void setxCoordinateOfCar(double xCoordinateOfCar) {
+        this.xCoordinateOfCar = xCoordinateOfCar;
+    }
 
+    public double getyCoordinateOfCar() {
+        return yCoordinateOfCar;
+    }
 
+    public void setyCoordinateOfCar(double yCoordinateOfCar) {
+        this.yCoordinateOfCar = yCoordinateOfCar;
+    }
+
+    private double xCoordinateOfCar;
+    private double yCoordinateOfCar;
+    private static Car instance;
+    private static final Lock lock =new ReentrantLock();
+    private final List<Operator> operators = new ArrayList<>();
+
+    public static Car getInstance() {
+        Car localInstance = instance;
+
+        if (localInstance == null) {
+            lock.lock();
+            localInstance = instance;
+            try {
+                if (localInstance == null) {
+                    localInstance = new Car();
+                    localInstance.initialize();
+                    instance = localInstance;
+                }
+            } finally {
+                lock.unlock();
+            }
+        }
+        return localInstance;
+    }
+
+    private void initialize() {
+// разобраться с лямбдой
+    }
+
+    public List<Operator> getCars() {
+        return operators;
+    }
 }
