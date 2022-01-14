@@ -6,6 +6,10 @@ public class Passenger implements Runnable {
 
     @Override
     public void run() {
-
+        OperatorTaxi operatorTaxi = OperatorTaxi.getInstance();
+        for (Car car : operatorTaxi.getCars()) {
+            car.exchangePassengers(this);
+        }
     }
+
 }
