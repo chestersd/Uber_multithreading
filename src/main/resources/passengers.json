@@ -1,0 +1,19 @@
+{
+  "passengers": [
+    {
+      "id": 0,
+      "passengerSits": 25,
+      "passengers": 25
+    },
+    {
+      "id": 1,
+      "passengerSits": 20,
+      "passengers": 15
+    },
+    {
+      "id": 2,
+      "passengerSits": 30,
+      "passengers": 30
+    }
+  ]
+}
