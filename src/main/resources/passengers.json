@@ -1,19 +1,48 @@
 {
   "passengers": [
     {
-      "id": 0,
-      "passengerSits": 25,
-      "passengers": 25
+      "name": "John",
+      "isArrived": false
     },
     {
-      "id": 1,
-      "passengerSits": 20,
-      "passengers": 15
+      "name": "Kate",
+      "isArrived": false
     },
     {
-      "id": 2,
-      "passengerSits": 30,
-      "passengers": 30
+      "name": "Helen",
+      "isArrived": false
+    },
+    {
+      "name": "Alex",
+      "isArrived": false
+    },
+    {
+      "name": "Michael",
+      "isArrived": false
+    },
+    {
+      "name": "Denis",
+      "isArrived": false
+    },
+    {
+      "name": "Sasha",
+      "isArrived": false
+    },
+    {
+      "name": "Masha",
+      "isArrived": false
+    },
+    {
+      "name": "Zhanna",
+      "isArrived": false
+    },
+    {
+      "name": "Ksue",
+      "isArrived": false
+    },
+    {
+      "name": "Elen",
+      "isArrived": false
     }
   ]
 }
